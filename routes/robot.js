@@ -13,11 +13,12 @@ router.get('/question', async (req, res, next) => {
 		},
 	}
 	try {
-		const response = await fetch('http://jisuznwd.market.alicloudapi.com/iqa/query?question=' + encodeURIComponent(question), requestConfig);
+		const JOKE_URI = 'http://api.icndb.com/jokes/random?question='
+		const response = await fetch(JOKE_URI + encodeURIComponent(question), requestConfig);
 		const resJson = await response.json();
 		res.send({
 			status: 200,
-			content: resJson.result.content,
+			content: resJson.value.joke,
 		})
 	} catch (err) {
 		console.log('获取http数据失败', err);

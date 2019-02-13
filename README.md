@@ -9,6 +9,8 @@ cd node-weixin
 
 npm install
 
+mongodb-runner start
+
 npm run dev (需先开启mongodb)
 
 访问: http://localhost:8003
